@@ -11,7 +11,7 @@ const NumberInput = (props: NumberInputProps) => {
     if (Number.isNaN(event.target.value)) {
       props.onChange(0);  
     }
-    props.onChange(event.target.value);
+    props.onChange(Number(event.target.value));
   };
 
   return (

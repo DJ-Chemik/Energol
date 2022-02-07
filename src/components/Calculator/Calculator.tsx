@@ -1,4 +1,3 @@
-import { TextField } from '@mui/material';
 import React, { useState } from 'react';
 import NumberInput from '../UI/NumberInput/NumberInput';
 import Text from '../UI/Text/Text';
@@ -7,10 +6,10 @@ import { Wrapper } from './Calculator.styled';
 const MODIFIER = 0.8;
 
 const Calculator = () => {
-  const [production1, setProduction1] = useState(0);
-  const [production2, setProduction2] = useState(0);
-  const [consumption1, setConsumption1] = useState(0);
-  const [consumption2, setConsumption2] = useState(0);
+  const [production1, setProduction1] = useState<number>(0);
+  const [production2, setProduction2] = useState<number>(0);
+  const [consumption1, setConsumption1] = useState<number>(0);
+  const [consumption2, setConsumption2] = useState<number>(0);
 
   const handleChangeProduction1 = (value: number) => {
     setProduction1(value);
@@ -44,15 +43,6 @@ const Calculator = () => {
       <Text text="Ile zostało" />
       {/* Row 2 */}
       <Text text="Taryfa 1" />
-      {/* <TextField
-        hiddenLabel
-        variant="filled"
-        type="number"
-        style={{
-          background: "white",
-        }}
-        onChange={handleChangeProduction1}
-      /> */}
       <NumberInput onChange={handleChangeProduction1} />
       <Text number={modifiedProduction1} />
       <NumberInput onChange={handleChangeConsumption1} />

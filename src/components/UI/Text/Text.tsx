@@ -24,10 +24,9 @@ const Text = (props: HeaderProps) => {
         break;
     }
   }
-  console.log(props.number);
-  let numberValue: string | number = '';
+  let numberValue: number | null = null;
   if (props.number !== undefined) {
-    numberValue = (Math.round(props.number * 100)/100).toFixed(2);
+    numberValue = Number(props.number.toFixed(3));
   }
   return (
     <Textwrapper isNumberPositive={isNumberPositive}>
