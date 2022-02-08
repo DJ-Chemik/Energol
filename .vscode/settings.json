@@ -29,6 +29,12 @@
                 "command": "yarn dev",
                 "color": "cyan"
             },
+            {
+                "name": "Electron dist",
+                "cwd": "${workspaceFolder}",
+                "command": "yarn dist",
+                "color": "#662266"
+            },
         ]
     },
 }

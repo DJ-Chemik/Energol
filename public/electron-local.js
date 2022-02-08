@@ -1,5 +1,6 @@
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
+const isDev = require('electron-is-dev');
 
 function createWindow() {
   // Create the browser window.
@@ -16,9 +17,16 @@ function createWindow() {
 
   // and load the index.html of the app.
   // win.loadFile("index.html");
-  win.loadURL(`file://${path.join(__dirname, '../build/index.html')}`);
+  win.loadURL(
+    isDev
+      ? 'http://localhost:3000'
+      : `file://${path.join(__dirname, '../build/index.html')}`
+  );
   // win.setMenu(null); // This disable menu and shortcuts like F11
   // Open the DevTools.
+  if (isDev) {
+    win.webContents.openDevTools({ mode: 'detach' });
+  }
 }
 
 // This method will be called when Electron has finished
