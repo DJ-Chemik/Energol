@@ -23,6 +23,12 @@
                 "command": "yarn start",
                 "color": "cyan"
             },
+            {
+                "name": "DEV",
+                "cwd": "${workspaceFolder}",
+                "command": "yarn dev",
+                "color": "cyan"
+            },
         ]
     },
 }

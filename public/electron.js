@@ -1,16 +1,18 @@
 const path = require('path');
-
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
+    minWidth:1366,
+    minHeight: 768,
     width: 1366,
     height: 768,
     webPreferences: {
       nodeIntegration: true,
     },
+    autoHideMenuBar: true, // menu can be open by click ALT button
   });
 
   // and load the index.html of the app.
@@ -20,6 +22,7 @@ function createWindow() {
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../build/index.html')}`
   );
+  // win.setMenu(null); // This disable menu and shortcuts like F11
   // Open the DevTools.
   if (isDev) {
     win.webContents.openDevTools({ mode: 'detach' });
